@@ -1,7 +1,6 @@
-const token = config.API_KEY;
-const API_URL = "https://ci-jshint.herokuapp.com/api"
+const API_KEY = "W8QU-ZgPgWhFOuAqdnap7VlNsc0";
+const API_URL = "https://ci-jshint.herokuapp.com/api";
 const resultsModal = new bootstrap.Modal(document.getElementById("resultsModal"));
-
 
 document.getElementById("status").addEventListener("click", e => getStatus(e));
 document.getElementById("submit").addEventListener("click", e => postForm(e));
@@ -29,7 +28,7 @@ async function postForm(e) {
     const response = await fetch(API_URL, {
         method: "POST",
         headers: {
-            "Authorization": token,
+            "Authorization": API_KEY,
         },
         body: form,
     });
@@ -47,7 +46,7 @@ async function postForm(e) {
 
 async function getStatus(e) {
 
-    const queryString = `${API_URL}?api_key=${token}`;
+    const queryString = `${API_URL}?api_key=${API_KEY}`;
 
     const response = await fetch(queryString);
 
